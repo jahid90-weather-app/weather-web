@@ -1,18 +1,20 @@
 <template>
   <div class="weather">
-    <h1>{{hello}}</h1>
-    <p>This is where the weather information will be displayed.</p>
+    <WeatherForm/>
+    <hr />
+    <WeatherDetails/>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
+import WeatherDetails from './WeatherDetails'
+import WeatherForm from './WeatherForm'
+
 export default {
   name: 'Weather',
-  data: () => {
-    return {
-      hello: 'Hello!'
-    }
+  components: {
+    WeatherDetails,
+    WeatherForm
   }
 }
 </script>

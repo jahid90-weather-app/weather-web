@@ -7,6 +7,13 @@ import router from './router'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import './assets/css/weather-icons.min.css'
+import './assets/font/weathericons-regular-webfont.eot'
+import './assets/font/weathericons-regular-webfont.svg'
+import './assets/font/weathericons-regular-webfont.ttf'
+import './assets/font/weathericons-regular-webfont.woff'
+import './assets/font/weathericons-regular-webfont.woff2'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
