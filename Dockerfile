@@ -13,8 +13,6 @@ RUN yarn build
 # Production server
 FROM nginx:alpine
 
-WORKDIR /usr/app
-
 COPY --from=builder /usr/app/dist /usr/share/nginx/html/
 
 EXPOSE 80
