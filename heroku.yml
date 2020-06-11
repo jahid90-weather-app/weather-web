@@ -1,4 +1,3 @@
-// Run `$ yarn build` locally to generate the dist/ directory before pushing to heroku
 build:
     docker:
         web: Dockerfile.heroku
