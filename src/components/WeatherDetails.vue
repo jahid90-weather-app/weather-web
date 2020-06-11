@@ -65,15 +65,14 @@ export default {
   },
   methods: {
     async handleLocationChange (location) {
-      console.log('Received location change event:', location)
-
       try {
         this.loading = true
         this.data = undefined
         this.error = undefined
 
+        // This code will run from the browser. The browser cannot access the docker network hostname: weather-service.
+        // So it has to be accessed via localhost.
         const serviceEndpoint = process.env.SERVICE_ENDPOINT || 'http://localhost:3000/weather'
-
         const response = await axios.get(serviceEndpoint, {
           params: {
             location
