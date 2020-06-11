@@ -1,14 +1,15 @@
 <template>
-  <form class='mt-4'>
+  <form class='mt-4' @submit.prevent='onSubmit'>
     <div class="form-group">
-      <h4>
-        <label for="search-field">Enter a location below to look up its weather.</label>
-      </h4>
+      <h6>
+        <label for='search-field'>Enter a location below to look up its weather.</label>
+      </h6>
       <div class='weather-search-field'>
-        <input type="text" class="form-control" id="search-field"
-              aria-describedby="search-field" placeholder="Location...">
+        <input type='text' class='form-control' id='search-field'
+            aria-describedby='search-field' placeholder='Location...'
+            v-model='location' autofocus>
         <div class='weather-search-button'>
-          <button type="submit" class="btn btn-dark">Submit</button>
+          <button type='submit' class='btn btn-secondary'>Submit</button>
         </div>
       </div>
     </div>
@@ -17,7 +18,22 @@
 
 <script>
 export default {
-  name: 'WeatherForm'
+  name: 'WeatherForm',
+  data () {
+    return {
+      location: ''
+    }
+  },
+  methods: {
+    onSubmit () {
+      if (this.location === undefined || this.location === '') {
+        return
+      }
+
+      this.$root.$emit('weather:location:change', { location: this.location })
+      this.location = ''
+    }
+  }
 }
 </script>
 
