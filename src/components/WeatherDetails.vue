@@ -73,6 +73,8 @@ export default {
         // This code will run from the browser. The browser cannot access the docker network hostname: weather-service.
         // So it has to be accessed via localhost.
         const serviceEndpoint = process.env.SERVICE_ENDPOINT || 'http://localhost:3000/weather'
+        console.info('Loaded service endpoint:', serviceEndpoint)
+        console.info('Environment:', process.env)
         const response = await axios.get(serviceEndpoint, {
           params: {
             location
