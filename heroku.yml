@@ -1,3 +1,6 @@
+setup:
+    config:
+        SERVICE_ENDPOINT: https://jahiduls-weather-service.herokuapp.com/weather
 build:
     docker:
         web: Dockerfile.heroku
