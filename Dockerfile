@@ -1,19 +1,20 @@
 # Build server
-FROM node:12-alpine as builder
+# FROM node:12-alpine as builder
 
-WORKDIR /usr/app
+# WORKDIR /usr/app
 
-COPY package.json .
-RUN yarn install
+# COPY package.json .
+# RUN yarn install
 
-COPY . .
+# COPY . .
 
-RUN yarn build
+# RUN yarn build
 
 # Production server
 FROM nginx:alpine
 
-COPY --from=builder /usr/app/dist /usr/share/nginx/html/
+# COPY --from=builder /usr/app/dist /usr/share/nginx/html/
+COPY ./dist /usr/share/nginx/html
 
 EXPOSE 80
 
